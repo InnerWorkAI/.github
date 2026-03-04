@@ -1,5 +1,7 @@
 # InnerWork
 
+![Títlulo](assets/documentation_images/1.png)
+
 ## Autores y participación
 
 * [Antonio Delgado Rodríguez](https://github.com/AntonioDR01): 25%
@@ -93,7 +95,7 @@ En esta fase se transforman los datos brutos en estructuras aptas para el aprend
 
 ### Limpieza *dataset* de insatisfacción laboral
 
-IMAGEN 2
+![histogramas](assets/documentation_images/2.png)
 
 Tras una inspección inicial mediante histogramas y análisis de valores únicos, se han determinado las siguientes acciones de limpieza:
 
@@ -113,7 +115,7 @@ Para que el modelo pueda procesar la información, se han aplicado las siguiente
 
 Mediante la visualización de las correlaciones, se identifican las variables que presentan una mayor relación estadística con la rotación laboral (*Attrition*). Este análisis es vital para entender qué factores pesan más en el malestar del empleado.
 
-IMAGEN 3
+![Mapa](assets/documentation_images/3.png)
 
 Para optimizar el rendimiento del modelo y reducir el ruido estadístico, se ha aplicado un criterio de filtrado por relevancia mediante un umbral de corte en el que se eliminan todas aquellas variables cuya correlación con la variable objetivo sea inferior a 0,05 en valor absoluto. Este umbral permite conservar únicamente los factores con un impacto estadístico significativo, simplificando la complejidad del modelo sin perder capacidad predictiva para la aplicación final y ayudando a prevenir el sobreajuste (*overfitting*) al descartar variables que podrían introducir patrones aleatorios en la aplicación final.
 
@@ -121,7 +123,7 @@ Para optimizar el rendimiento del modelo y reducir el ruido estadístico, se ha 
 
 A diferencia de otros conjuntos de datos de texto, el Mental Health Corpus presenta una integridad del 100%, sin valores nulos en ninguna de sus columnas, lo que permite proceder directamente al análisis exploratorio.
 
-IMAGEN 4
+![Distribución](assets/documentation_images/4.png)
 
 Como se observa en la gráfica superior, las proporciones entre las categorías son prácticamente simétricas. Esta distribución equitativa constituye una ventaja crítica para el entrenamiento, ya que:
 
@@ -133,7 +135,7 @@ Como se observa en la gráfica superior, las proporciones entre las categorías 
 
 Durante la exploración de los textos, se ha detectado que los mensajes asociados a individuos con indicadores de riesgo tienden a ser significativamente más extensos que los del grupo saludable.
 
-IMAGEN 5
+![Longitud de mensajes](assets/documentation_images/5.png)
 
 Este hallazgo revela un riesgo de sesgo por longitud: el modelo podría aprender erróneamente a asociar la cantidad de palabras con la presencia de un problema de salud mental, ignorando el contenido semántico real. Para mitigar este riesgo, en la fase de preprocesamiento se pondrá especial énfasis en la normalización del texto para asegurar que la clasificación se base en el significado y el sentimiento del mensaje, y no en su extensión.
 
@@ -141,7 +143,7 @@ Este hallazgo revela un riesgo de sesgo por longitud: el modelo podría aprender
 
 Antes de proceder con el modelado, se ha analizado la distribución de la variable objetivo (emotion) para validar la calidad estadística del dataset.
 
-IMAGEN 6
+![Distibución](assets/documentation_images/6.png)
 
 Como se evidencia en la gráfica, el dataset presenta una distribución cercana a la paridad, por lo que se considera técnicamente balanceado, lo que conlleva tres implicaciones metodológicas:
 
@@ -153,7 +155,7 @@ Como se evidencia en la gráfica, el dataset presenta una distribución cercana 
 
 El *dataset* incluye la variable Usage, que predefine el propósito de cada muestra siguiendo la estructura estándar de competiciones científicas.
 
-IMAGEN 7
+![Distribución del Dataset](assets/documentation_images/7.png)
 
 Respetar esta nomenclatura es fundamental para la trazabilidad y comparativa del experimento:
 
@@ -211,17 +213,18 @@ Para identificar el riesgo de de fuga de talento, se han comparado tres de los a
 
 Tras comparar todos los resultados de los entrenamientos, se sacan las siguientes conclusiones de cada uno:
 
-IMAGEN 8
 
 * **Logistic Regression**: Predice más empleados que se van y en realidad se quedan, pero tiene un ligero mejor rendimiento en acertar los que se van a ir realmente. Este modelo es útil en el caso de que se priorice detectar más empleados que se van a cambio de obtener más falsos positivos.
 
-IMAGEN 9
+  ![Matriz de confusion. Logistic Regression](assets/documentation_images/8.png)
 
 * **Random Forest Classifier**: Es el peor de los tres modelos con un rendimiento bastante malo, dando un *recall* de 0,11 en la segunda clase y acertando muy pocos casos, por lo que queda descartado.
 
-IMAGEN 10
+  ![Matriz de confusion. Random Forest](assets/documentation_images/9.png)
 
 * **XGBoost Classifier**: Es el que está más balanceado de todos y ofrece un mejor rendimiento general. Acierta 21 casos de gente que se va y realmente se va a ir, y tiene 26 falsos positivos y falsos negativos. Ofrece una precisión bastante buena para la clase 0 (0,89) y para la clase 1 un (0,45), que no es perfecta pero puede servir teniendo en cuenta el propósito de la aplicación.
+
+  ![Matriz de confusion. XGBoost](assets/documentation_images/10.png)
 
 Se ha seleccionado **XGBoost** como el motor predictivo final. El criterio de elección se basa en su capacidad para minimizar el exceso de falsos positivos en comparación con Logistic Regression, ofreciendo una fiabilidad superior para la toma de decisiones corporativas.
 
@@ -233,17 +236,17 @@ Para la detección de indicadores de burnout y estrés en el lenguaje, se han ev
 
 Tras someter a los modelos a los datos de prueba, se observó una competencia muy reñida entre los modelos lineales, destacando sobre el enfoque de árboles de decisión:
 
-IMAGEN 11
-
 * **Logistic Regression**: Logró la mayor precisión del conjunto con un 91,96%. Su capacidad para asignar probabilidades continuas lo hace ideal para detectar matices en el lenguaje.
 
-IMAGEN 12
+  ![Matriz de confusion. Logistic Regression](assets/documentation_images/11.png)
 
 * **LinearSVC**: Obtuvo un rendimiento casi idéntico del 91,80%. Es un modelo extremadamente robusto para espacios de alta dimensionalidad (como los 5.000 términos de nuestro vocabulario).
 
-IMAGEN 13
+  ![Matriz de confusion. LinearSVC](assets/documentation_images/13.png)
 
 * **Random Forest**: Presentó un desempeño inferior en comparación con los anteriores, confirmando que, en tareas de clasificación de texto con TF-IDF, los modelos lineales suelen generalizar mejor los patrones semánticos.
+
+  ![Matriz de confusion. Random Forest](assets/documentation_images/12.png)
 
 Para garantizar que el sistema es útil en un entorno real, se realizó una prueba de "estrés" introduciendo una batería de ajenos al dataset, que simulaban tanto estados de bienestar como crisis de agotamiento laboral.
 
@@ -278,7 +281,7 @@ Para el proceso de aprendizaje de la red, se ha definido una metodología basada
 
 Las curvas de aprendizaje permiten diagnosticar el comportamiento del modelo a lo largo de las 100 épocas. Se analizan dos métricas críticas: la **Exactitud (Accuracy)** y la **Pérdida (Loss)**.
 
-IMAGEN 14
+![Curva de aprendizaje](assets/documentation_images/14.png)
 
 * **Evolución de la Exactitud:** Ambas curvas (entrenamiento y validación) ascienden rápidamente durante las primeras 20 épocas y convergen en torno al 86-88%. La convergencia de ambas líneas indica que el modelo ha aprendido patrones consistentes.
 
@@ -286,7 +289,7 @@ IMAGEN 14
 
 La matriz de confusión permite identificar cómo se distribuyen los aciertos y errores del clasificador binario en el conjunto de prueba independiente.
 
-IMAGEN 15
+![Matriz de confusion](assets/documentation_images/15.png)
 
 | Métrica | Valor (Clase Estrés) | Interpretación |
 | :--- | :--- | :--- |
