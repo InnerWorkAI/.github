@@ -207,12 +207,13 @@ La preparación de los datos textuales es un proceso crítico que transforma el 
 
 * División del Dataset (Train/Test Split): Dividimos los datos en un conjunto de entrenamiento (80%) y uno de prueba (20%). Se utiliza el parámetro stratify=y para garantizar que la proporción de empleados que se van y los que se quedan sea la misma en ambos grupos, asegurando que el modelo aprenda a identificar correctamente ambas situaciones.
 
+## Entrenamiento y comprobación del rendimiento de los modelos
+
 ### Entrenamiento del modelo de insatisfacción laboral y comprobación de su rendimiento
 
 Para identificar el riesgo de de fuga de talento, se han comparado tres de los algoritmos más robustos en aprendizaje supervisado sobre datos tabulares: **Logistic Regression**, **Random Forest Classifier** y **XGBoost Classifier**.
 
 Tras comparar todos los resultados de los entrenamientos, se sacan las siguientes conclusiones de cada uno:
-
 
 * **Logistic Regression**: Predice más empleados que se van y en realidad se quedan, pero tiene un ligero mejor rendimiento en acertar los que se van a ir realmente. Este modelo es útil en el caso de que se priorice detectar más empleados que se van a cambio de obtener más falsos positivos.
 
@@ -227,8 +228,6 @@ Tras comparar todos los resultados de los entrenamientos, se sacan las siguiente
   ![Matriz de confusion. XGBoost](assets/documentation_images/10.png)
 
 Se ha seleccionado **XGBoost** como el motor predictivo final. El criterio de elección se basa en su capacidad para minimizar el exceso de falsos positivos en comparación con Logistic Regression, ofreciendo una fiabilidad superior para la toma de decisiones corporativas.
-
-## Entrenamiento y comprobación del rendimiento de los modelos
 
 ### Entrenamiento del modelo de salud mental y comprobación de su rendimiento
 
@@ -290,59 +289,6 @@ Las curvas de aprendizaje permiten diagnosticar el comportamiento del modelo a l
 La matriz de confusión permite identificar cómo se distribuyen los aciertos y errores del clasificador binario en el conjunto de prueba independiente.
 
 ![Matriz de confusion](assets/documentation_images/15.png)
-
-| Métrica | Valor (Clase Estrés) | Interpretación |
-| :--- | :--- | :--- |
-| **Exactitud (Accuracy)** | 0,89 | Capacidad global de acierto del modelo. |
-| **Sensibilidad (Recall)** | 0,89 | Capacidad para detectar casos reales de estrés. |
-| **F1-Score** | 0,90 | Equilibrio óptimo entre precisión y sensibilidad. |
-
-El desglose de los resultados revela un desempeño sólido:
-
-* **Verdaderos Positivos (Estrés):** Se identifican correctamente el 89% de los individuos estresados.
-
-* **Falsos Positivos:** Se registraron 368 casos de control clasificados erróneamente como estrés, un margen de precaución aceptable en un escenario preventivo.
-
-* **Falsos Negativos:** Se registraron 406 casos donde el estrés no fue detectado, marcando el área principal de mejora para futuras iteraciones.
-
-Para verificar la utilidad práctica de **InnerWork**, se realizó una prueba de inferencia con imágenes ajenas al dataset original. El flujo de procesamiento (escala de grises, redimensionado a 48x48 y normalización) permitió obtener predicciones coherentes ante nuevas caras, iluminaciones y posturas.
-
-Conclusiones de la implementación:
-* **Resiliencia:** La arquitectura CNN y el uso de *Data Augmentation* lograron un modelo robusto con un 89% de precisión global.
-
-* **Prevención:** Un *Recall* del 0,89 en la clase crítica asegura intervenciones a tiempo en la inmensa mayoría de los casos de riesgo de *burnout*.
-
-### Entrenamiento del modelo de detección de estrés en imágenes faciales y comprobación de su rendimiento
-
-En esta sección se detalla la configuración, el proceso de aprendizaje y la evaluación de la Red Neuronal Convolucional (CNN) diseñada para la clasificación del estrés a partir de rasgos faciales.
-
-La arquitectura se ha diseñado para extraer características jerárquicas de forma automática, estructurándose en las siguientes capas:
-
-* **Capas Conv2D + ReLU:** Actúan como filtros jerárquicos. Las primeras capas detectan bordes y texturas, mientras que las más profundas identifican rasgos faciales complejos asociados al estrés.
-
-* **MaxPooling2D:** Estas capas condensan la información espacial, permitiendo que el modelo sea robusto ante pequeñas variaciones o desplazamientos en la posición del rostro.
-
-* **GlobalAveragePooling2D, Dense y Dropout:** El uso de **Dropout** es vital para prevenir el sobreajuste (*overfitting*), obligando a la red a no depender de neuronas específicas. La capa **Dense** final actúa como el clasificador lógico que dictamina la probabilidad de la categoría detectada.
-
-Para el proceso de aprendizaje de la red, se ha definido una metodología basada en la optimización de recursos y la estabilidad del modelo:
-
-* **Épocas (Epochs):** Se ha establecido un límite de 100 ciclos de entrenamiento completos sobre el conjunto de datos.
-
-* **Tamaño de Lote (Batch Size):** Se procesan las imágenes en bloques de 32 para optimizar el uso de la memoria y estabilizar la actualización de los pesos.
-
-* **Validación Cruzada:** El modelo se evalúa simultáneamente con el conjunto de pruebas, permitiendo monitorizar la capacidad de generalización en tiempo real.
-
-Las curvas de aprendizaje permiten diagnosticar el comportamiento del modelo a lo largo de las 100 épocas. Se analizan dos métricas críticas: la **Exactitud (Accuracy)** y la **Pérdida (Loss)**.
-
-IMAGEN 14
-
-* **Evolución de la Exactitud:** Ambas curvas (entrenamiento y validación) ascienden rápidamente durante las primeras 20 épocas y convergen en torno al 86-88%. La convergencia de ambas líneas indica que el modelo ha aprendido patrones consistentes.
-
-* **Evolución de la Pérdida:** La pérdida de entrenamiento desciende de forma constante hasta estabilizarse cerca de 0,3, lo que significa que el error del modelo disminuye progresivamente. La pérdida de validación también desciende y se mantiene en un rango similar. Aunque presenta oscilaciones más marcadas (ruido de validación) a lo largo del entrenamiento, no se observa una tendencia al alza, lo que confirma que se ha evitado con éxito el sobreajuste (*overfitting*).
-
-La matriz de confusión permite identificar cómo se distribuyen los aciertos y errores del clasificador binario en el conjunto de prueba independiente.
-
-IMAGEN 15
 
 | Métrica | Valor (Clase Estrés) | Interpretación |
 | :--- | :--- | :--- |
