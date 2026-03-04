@@ -15,35 +15,35 @@ La idea surge de la necesidad de mejorar el ambiente laboral y poder evitar tant
 
 ### Autenticación
 
-![Home](assets/home.png)
+![Home](assets/frontend/home.png)
 
 * Registro para crear empresa
-![Registro](assets/register.png)
+![Registro](assets/frontend/register.png)
 
 * Login para acceder tanto como admin como empleado
-![Login](assets/login.png)
+![Login](assets/frontend/login.png)
 
 * Página accesible mediante correo de reestablecer contraseña, funcional mediante token en la URL.
-![Reiniciar contraseña](assets/reset-password.png)
+![Reiniciar contraseña](assets/frontend/reset-password.png)
 
 ### Empleados
 * Gráfica enseñando el historial de satisfacción y de estrés del empleado
 * Alerta de si hay un *check-in* pendiente
 * Chatbot mediante la API de Groq, especializado en estrés laboral y *burnout*, con contexto del último formulario del empleado para poder ayudarle.
-![Dashboard de Empleado](assets/user-dashboard.png)
+![Dashboard de Empleado](assets/frontend/user-dashboard.png)
 
 * Prueba de vídeo y audio donde se obtendran imágenes y audio durante mínimo 15 segundos para analizar estrés mediante IA.
 * Formulario breve donde el empleado describe como le ha ido su semana laboral para analizarlo junto a sus datos de empleado mediante IA.
-![Check In](assets/check-in.png)
+![Check In](assets/frontend/check-in.png)
 
 ### Admin
 * Modal para crear empleado
 * Tarjetas representando el estado de la empresa (Porcentaje de *burnout* general, alertas críticas y porcentaje de formularios realizados)
 * Lista de empleados con su respectivo porcentaje de *burnout*
 * Gráfica enseñando el historial de satisfacción y estrés de la empresa
-![Admin Dashboard](assets/admin-dashboard.png)
-![Añadir empleado](assets/add-employee.png)
+![Admin Dashboard](assets/frontend/admin-dashboard.png)
+![Añadir empleado](assets/frontend/add-employee.png)
 * Filtro para buscar empleados por nombre, nivel de *burnout*, departamento y por fecha del último formulario.
 * Editar datos de empleados
 * Borrar empleados
-![Empleados](assets/employee-directory.png)
+![Empleados](assets/frontend/employee-directory.png)
