@@ -13,36 +13,42 @@ La idea surge de la necesidad de mejorar el ambiente laboral y poder evitar tant
 
 ## Aplicación web
 
-### Autenticación
+### Landing Page
 
 ![Home](assets/frontend/home.png)
 
+### Registro
 * Registro para crear empresa
 ![Registro](assets/frontend/register.png)
 
+### Login
 * Login para acceder tanto como admin como empleado
 ![Login](assets/frontend/login.png)
 
+### Reiniciar contraseña / Verificar cuenta
 * Página accesible mediante correo de reestablecer contraseña, funcional mediante token en la URL.
 ![Reiniciar contraseña](assets/frontend/reset-password.png)
 
-### Empleados
+### Dashboard de empleados
 * Gráfica enseñando el historial de satisfacción y de estrés del empleado
 * Alerta de si hay un *check-in* pendiente
 * Chatbot mediante la API de Groq, especializado en estrés laboral y *burnout*, con contexto del último formulario del empleado para poder ayudarle.
 ![Dashboard de Empleado](assets/frontend/user-dashboard.png)
 
+### Check-in
 * Prueba de vídeo y audio donde se obtendran imágenes y audio durante mínimo 15 segundos para analizar estrés mediante IA.
 * Formulario breve donde el empleado describe como le ha ido su semana laboral para analizarlo junto a sus datos de empleado mediante IA.
 ![Check In](assets/frontend/check-in.png)
 
-### Admin
+### Dashboard de admin
 * Modal para crear empleado
 * Tarjetas representando el estado de la empresa (Porcentaje de *burnout* general, alertas críticas y porcentaje de formularios realizados)
 * Lista de empleados con su respectivo porcentaje de *burnout*
 * Gráfica enseñando el historial de satisfacción y estrés de la empresa
 ![Admin Dashboard](assets/frontend/admin-dashboard.png)
 ![Añadir empleado](assets/frontend/add-employee.png)
+
+### Lista de empleados
 * Filtro para buscar empleados por nombre, nivel de *burnout*, departamento y por fecha del último formulario.
 * Editar datos de empleados
 * Borrar empleados
