@@ -404,3 +404,51 @@ Conclusiones de la implementación:
 * Editar datos de empleados
 * Borrar empleados
 ![Empleados](assets/frontend/employee-directory.png)
+
+# Conclusión
+
+**InnerWork** ha supuesto un desarrollo difícil pero valioso, donde hemos podido aprender mucho tanto de IA como de trabajo en equipo, organizándonos lo mejor posible para conseguir el mejor producto.
+
+Al haber integrado tres modelos entrenados por nosotros en un aplicación con una interfaz amigable e intuitiva que también hace uso de varios modelos externos, consideramos que hemos logrado nuestros objetivos al conseguir proyecto útil y que podría servir para un entorno real.
+
+## Tecnologías utilizadas
+
+### Frontend
+* Ionic
+* Angular
+* Tailwind CSS
+* Capacitor
+* Leaflet + LocationIQ API
+
+### Backend & AI
+* FastAPI
+* SQLAlchemy
+* PostgreSQL
+* Docker
+* Scheduler
+* FastAPI Mail
+
+### AI
+* TensorFlow + scikit-learn + XGBoost
+* Groq API
+* OpenAI SDK
+
+## Bibliografía
+
+* [Angular](https://angular.dev/overview)
+* [TypeScript](https://www.typescriptlang.org/docs/)
+* [Ionic](https://ionicframework.com/docs)
+* [Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite)
+* [Capacitor](https://capacitorjs.com/docs)
+* [Leaflet](https://leafletjs.com/reference.html)
+* [LocationIQ](https://es.locationiq.com/)
+* [ApexCharts](https://apexcharts.com/)
+* [FastAPI](https://fastapi.tiangolo.com/)
+* [SQLAlchemy](https://www.sqlalchemy.org/)
+* [PostgreSQL](https://www.typescriptlang.org/docs/)
+* [Docker](https://docs.docker.com/)
+* [TensorFlow](https://www.tensorflow.org/)
+* [scikit-learn](https://scikit-learn.org/stable/user_guide.html)
+* [XGBoost](https://www.ibm.com/es-es/think/topics/xgboost)
+* [Groq](https://groq.com/)
+* [OpenAI SDK](https://developers.openai.com/api/docs/guides/agents-sdk/)
