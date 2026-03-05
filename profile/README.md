@@ -15,7 +15,7 @@
 
 [**Vídeo**](https://www.youtube.com/watch?v=r4y6dXoNDA0)
 
-[**InnerWork APK**](https://drive.google.com/file/d/1_D-iKTllqeR3UdAIsmd40k68DTk3V-46/view?usp=sharing)
+[**InnerWork APK**](https://drive.google.com/file/d/1fiZ2DPjPEEJ9dDCHPgz8g4DImfg1yurX/view?usp=sharing)
 
 [**Presentación**](https://github.com/InnerWorkAI/.github/blob/1ae7e0dd37b1ab47ac27512720615613044c4fa7/InnerWork.pdf)
 
