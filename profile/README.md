@@ -9,9 +9,11 @@
 * [Alejandro Gálvez Madueño](https://github.com/AGALMAD): 25%
 * [Jesús Herrera Sánchez](https://github.com/Jesushs4): 25%
 
-## Enlace
+## Enlaces
 
-https://web.innerwork-ai.es/
+[**Web**](https://web.innerwork-ai.es/)
+
+[**Vídeo**](https://www.youtube.com/watch?v=r4y6dXoNDA0)
 
 [**InnerWork APK**](https://drive.google.com/file/d/1_D-iKTllqeR3UdAIsmd40k68DTk3V-46/view?usp=sharing)
 
