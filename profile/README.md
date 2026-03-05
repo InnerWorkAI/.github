@@ -17,6 +17,8 @@
 
 [**InnerWork APK**](https://drive.google.com/file/d/1_D-iKTllqeR3UdAIsmd40k68DTk3V-46/view?usp=sharing)
 
+[**Presentación**](https://github.com/InnerWorkAI/.github/blob/1ae7e0dd37b1ab47ac27512720615613044c4fa7/InnerWork.pdf)
+
 ## Introducción
 
 **InnerWork** en un Trabajo de Fin de Máster consistente en una aplicación web y móvil de *Machine Learning*, enfocada en el análisis de la satisfacción laboral de los empleados. Los usuarios completan encuestas periódicas que recopilan datos sobre su bienestar y experiencia en el trabajo. A partir de estas respuestas, el sistema procesa la información y genera métricas e indicadores de satisfacción. Cada empleado puede acceder a un *dashboard* personal para visualizar su evolución a lo largo del tiempo. Por otro lado, los administradores de cada empresa disponen de un panel global donde pueden analizar el estado de satisfacción de todos sus empleados. El objetivo principal es ayudar a las empresas a detectar problemas laborales y mejorar el clima organizacional.
