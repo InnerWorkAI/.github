@@ -361,7 +361,7 @@ Conclusiones de la implementación:
 ![Empleados](assets/frontend/employee-directory.png)
 
 ### APK Compilada en Android
-![APK](assets/frontend/android_apk.jpeg)
+<img src="assets/frontend/android_apk.jpeg" alt="APK" width="250">
 
 # Conclusión
 
