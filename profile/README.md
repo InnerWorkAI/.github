@@ -360,6 +360,9 @@ Conclusiones de la implementación:
 * Borrar empleados
 ![Empleados](assets/frontend/employee-directory.png)
 
+### APK Compilada en Android
+![APK](assets/frontend/android_apk.png)
+
 # Conclusión
 
 **InnerWork** ha supuesto un desarrollo difícil pero valioso, donde hemos podido aprender mucho tanto de IA como de trabajo en equipo, organizándonos lo mejor posible para conseguir el mejor producto.
